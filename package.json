@@ -4,16 +4,19 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
+    "dev": "node --inspect ./server.js",
+    "start": "cross-env NODE_ENV=production node ./server.js",
     "build": "remix vite:build",
-    "dev": "remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "start": "remix-serve ./build/server/index.js",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "serve": "node server.js"
   },
   "dependencies": {
+    "@remix-run/express": "^2.12.1",
     "@remix-run/node": "^2.12.1",
     "@remix-run/react": "^2.12.1",
-    "@remix-run/serve": "^2.12.1",
+    "cross-env": "^7.0.3",
+    "express": "^4.21.0",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
